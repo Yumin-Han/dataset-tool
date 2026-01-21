@@ -1,0 +1,30 @@
+[project]
+name = "dataset-tools"
+version = "1.0.0"
+description = "RIDE 데이터셋 변환 및 타임 정렬 도구"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26.4",
+    "opencv-python>=4.10.0",
+    "pandas>=2.2.3",
+    "h5py>=3.12.1",
+    "tqdm>=4.67.1",
+    "boto3>=1.35.90",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+]
+
+[project.scripts]
+dataset-tools = "main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []

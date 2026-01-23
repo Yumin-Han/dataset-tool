@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  test:
+    name: Test
+    uses: Yumin-Han/ride-common-configs/.github/workflows/python-test.yml@main
+    with:
+      python-version: '3.10'
+  
+  lint:
+    name: Lint
+    uses: Yumin-Han/ride-common-configs/.github/workflows/python-lint.yml@main
+    with:
+      python-version: '3.10'
+  
+  build:
+    name: Build
+    needs: [test, lint]
+    uses: Yumin-Han/ride-common-configs/.github/workflows/python-build.yml@main
+    with:
+      python-version: '3.10'

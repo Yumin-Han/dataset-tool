@@ -39,8 +39,8 @@ def main():
     )
     parser_convert.add_argument("input", help="입력 Raw 데이터셋 경로")
     parser_convert.add_argument("output", help="출력 Source 데이터셋 경로")
-    parser_convert.add_argument("--max-diff", type=int, default=100000,
-                              help="센서 간 최대 시간 차이 (마이크로초, 기본값: 100ms)")
+    parser_convert.add_argument("--max-diff", type=int, default=50000,
+                              help="센서 간 최대 시간 차이 (마이크로초, 기본값: 50ms)")
     
     # reassemble 명령어
     parser_reassemble = subparsers.add_parser(
